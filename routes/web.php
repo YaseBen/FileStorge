@@ -17,19 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-public function generaArxiuPublic(){
-    Storage::disk('public')->put('arxiu.xml');
-
-    return redirect(Storage::url('arxiu.xml'));
-}
-public function generaArxiuLocal(){
-    Storage::disk('local')->put('arxiu.json');
-
-    return redirect(Storage::url('arxiu.json'));
-}
-
 Route::post('/carregaFitxer', [arxiuController::class, 'carregaFitxer'])->name('carregaFitxer');
 
 Route::get('/register',function(){
     return view('formulari');
 });
+
+Route::post('/register',[arxiuController::class,'crearArxiu']);

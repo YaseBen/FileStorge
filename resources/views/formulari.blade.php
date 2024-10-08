@@ -19,40 +19,35 @@
     </head>
 
     <body>
-        <header>
-            <!-- place navbar here -->
-        </header>
-        <main>
-            <div class="row g-3">
-                <form action="crearArxiu" method="post" enctype="multiplart/form-data">
-                    @csrf
-                    <div class="col-12">
-                        <label for="exampleInputEmail1" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="Nom">
-                    </div>
-                    <div class="col-12">
-                        <label for="exampleInputEmail1" class="form-label">Descripció</label>
-                        <input type="text" class="form-control" id="Descripcio">
-                    </div>
-                    <div class="col-12">
-                        <label for="exampleInputEmail1" class="form-label">Preu </label>
-                        <input type="number" class="form-control" id="Preu" placeholder="Insereix el preu sense IVA">
-                    </div>
-                    <div class="col-12">
-                        <label for="exampleInputEmail1" class="form-label">% IVA </label>
-                        <input type="number" class="form-control" id="IVA" placeholder="Si no s'indica es posara 21% automaticament">
-                    </div>
-                    <div class="col-12">
-                        <label for="exampleInputEmail1" class="form-label">Color</label>
-                        <input type="text" class="form-control" id="P_IVA">
-                    </div>
-                    <div class="col-12">
-                        <label for="exampleInputEmail1" class="form-label">Talla</label>
-                        <input type="text" class="form-control" id="Talla">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+        <form action="/crearArxiu" method="POST" enctype="multipart/form-data" name="form">
+            @csrf
+            <div class="col-12">
+                <label for="Nom" class="form-label">Nom</label>
+                <input type="text" class="form-control" name="Nom" id="Nom" required>
             </div>
+            <div class="col-12">
+                <label for="Descripcio" class="form-label">Descripció</label>
+                <input type="text" class="form-control" name="Descripcio" id="Descripcio" required>
+            </div>
+            <div class="col-12">
+                <label for="Preu" class="form-label">Preu</label>
+                <input type="number" class="form-control" name="Preu" id="Preu" required>
+            </div>
+            <div class="col-12">
+                <label for="IVA" class="form-label">% IVA</label>
+                <input type="number" class="form-control" name="IVA" id="IVA" placeholder="Si no s'indica es posarà 21% automàticament">
+            </div>
+            <div class="col-12">
+                <label for="Color" class="form-label">Color</label>
+                <input type="text" class="form-control" name="Color" id="Color" required>
+            </div>
+            <div class="col-12">
+                <label for="Talla" class="form-label">Talla</label>
+                <input type="text" class="form-control" name="Talla" id="Talla" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
         </main>
         <footer>
             <!-- place footer here -->
