@@ -17,7 +17,7 @@ class FormController extends Controller
         $color = $request->input('Color');
         $talla = $request->input('Talla');
 
-        return view('formulari')->back()->with('success', 'Formulari enviat correctament!');
+        return redirect('/register')->with('success', 'Formulari enviat correctament!');
 
     }
 
